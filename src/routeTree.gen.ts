@@ -21,6 +21,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as BusinessesSlugRouteImport } from './routes/businesses.$slug'
 import { Route as AdminUsersRouteImport } from './routes/admin.users'
 import { Route as AdminStatisticsRouteImport } from './routes/admin.statistics'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
@@ -98,6 +99,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AdminRoute,
+} as any)
+const BusinessesSlugRoute = BusinessesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BusinessesRoute,
 } as any)
 const AdminUsersRoute = AdminUsersRouteImport.update({
   id: '/users',
@@ -189,7 +195,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
-  '/businesses': typeof BusinessesRoute
+  '/businesses': typeof BusinessesRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/network': typeof NetworkRoute
@@ -214,12 +220,13 @@ export interface FileRoutesByFullPath {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/statistics': typeof AdminStatisticsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/businesses/$slug': typeof BusinessesSlugRoute
   '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/businesses': typeof BusinessesRoute
+  '/businesses': typeof BusinessesRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/network': typeof NetworkRoute
@@ -244,6 +251,7 @@ export interface FileRoutesByTo {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/statistics': typeof AdminStatisticsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/businesses/$slug': typeof BusinessesSlugRoute
   '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
@@ -251,7 +259,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
-  '/businesses': typeof BusinessesRoute
+  '/businesses': typeof BusinessesRouteWithChildren
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/network': typeof NetworkRoute
@@ -276,6 +284,7 @@ export interface FileRoutesById {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/statistics': typeof AdminStatisticsRoute
   '/admin/users': typeof AdminUsersRoute
+  '/businesses/$slug': typeof BusinessesSlugRoute
   '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
@@ -309,6 +318,7 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/statistics'
     | '/admin/users'
+    | '/businesses/$slug'
     | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -339,6 +349,7 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/statistics'
     | '/admin/users'
+    | '/businesses/$slug'
     | '/admin'
   id:
     | '__root__'
@@ -370,6 +381,7 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/statistics'
     | '/admin/users'
+    | '/businesses/$slug'
     | '/admin/'
   fileRoutesById: FileRoutesById
 }
@@ -377,7 +389,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRouteWithChildren
-  BusinessesRoute: typeof BusinessesRoute
+  BusinessesRoute: typeof BusinessesRouteWithChildren
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   NetworkRoute: typeof NetworkRoute
@@ -472,6 +484,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/admin/'
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof AdminRoute
+    }
+    '/businesses/$slug': {
+      id: '/businesses/$slug'
+      path: '/$slug'
+      fullPath: '/businesses/$slug'
+      preLoaderRoute: typeof BusinessesSlugRouteImport
+      parentRoute: typeof BusinessesRoute
     }
     '/admin/users': {
       id: '/admin/users'
@@ -639,11 +658,23 @@ const AdminRouteChildren: AdminRouteChildren = {
 
 const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
+interface BusinessesRouteChildren {
+  BusinessesSlugRoute: typeof BusinessesSlugRoute
+}
+
+const BusinessesRouteChildren: BusinessesRouteChildren = {
+  BusinessesSlugRoute: BusinessesSlugRoute,
+}
+
+const BusinessesRouteWithChildren = BusinessesRoute._addFileChildren(
+  BusinessesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AdminRoute: AdminRouteWithChildren,
-  BusinessesRoute: BusinessesRoute,
+  BusinessesRoute: BusinessesRouteWithChildren,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   NetworkRoute: NetworkRoute,

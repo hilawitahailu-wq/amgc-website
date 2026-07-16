@@ -1,33 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
-const sceneLabels = [
-  "Addis Ababa skyline",
-  "Djibouti Port",
-  "Shipping containers",
-  "International cargo movement",
-  "Trucks on highways",
-  "Industrial manufacturing",
-  "Polymer raw materials",
-  "Edible oil production",
-  "Agriculture",
-  "Construction",
-  "Business meetings",
-  "Dubai skyline",
-];
-
 export function HeroCinematic() {
-  const [activeScene, setActiveScene] = useState(0);
-  const sceneText = useMemo(() => sceneLabels[activeScene], [activeScene]);
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveScene((current) => (current + 1) % sceneLabels.length);
-    }, 2000);
-
-    return () => window.clearInterval(interval);
-  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-navy-deep">
@@ -37,9 +11,9 @@ export function HeroCinematic() {
         muted
         loop
         playsInline
+        poster="/hero-fallback.svg"
         className="absolute inset-0 h-full w-full object-cover"
       >
-        {/* Points directly to public/hero-cinematic.mp4 */}
         <source src="/hero-cinematic.mp4" type="video/mp4" />
       </video>
 
@@ -56,7 +30,7 @@ export function HeroCinematic() {
             Building Africa's future through <em className="text-gold not-italic">trade, industry</em> and vision.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-white/80 leading-relaxed">
-            A cinematic view of AMGC’s global scale — from Addis Ababa and Djibouti ports to manufacturing, logistics and international trade.
+            AMGC brings institutional discipline to trade, logistics, manufacturing, agriculture, and strategic growth across East Africa and the Gulf.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -76,14 +50,6 @@ export function HeroCinematic() {
         </div>
       </div>
 
-      {/* Active Scene Label */}
-      <div className="absolute left-6 top-24 rounded-full border border-white/10 bg-black/50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/90 shadow-xl shadow-black/40 z-30">
-        {sceneText}
-      </div>
-      
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-[10px] uppercase tracking-[0.3em] z-30">
-        First 10 seconds matter
-      </div>
     </section>
   );
 }

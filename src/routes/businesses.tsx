@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DivisionCard } from "@/components/site/DivisionCard";
-import { activeDivisions, strategicDivisions } from "@/lib/site-data";
+import { activeDivisions, developingDivisions, strategicDivisions } from "@/lib/site-data";
 
 export const Route = createFileRoute("/businesses")({
   head: () => ({
     meta: [
       { title: "Our Businesses — AMGC Group Divisions" },
-      { name: "description", content: "Explore AMGC's business divisions: AIMEX import-export, AMGC Trading, logistics, manufacturing, agriculture, mining, and construction." },
+      { name: "description", content: "Explore AMGC's business divisions: AIMEX, AMGC Trading, logistics, manufacturing, agriculture, mining, and construction." },
     ],
   }),
   component: BusinessesPage,
@@ -33,8 +33,14 @@ function BusinessesPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-20">
             {activeDivisions.map((d) => <DivisionCard key={d.name} {...d} status="active" />)}
           </div>
-          <div className="mb-6 text-xs uppercase tracking-[0.3em] text-gold">Strategic Business Divisions</div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div className="mb-6 text-xs uppercase tracking-[0.3em] text-gold">In Development</div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+            {developingDivisions.map((d) => <DivisionCard key={d.name} {...d} status="development" />)}
+          </div>
+
+          <div className="mb-6 text-xs uppercase tracking-[0.3em] text-gold">Strategic Divisions</div>
+          <div className="grid md:grid-cols-2 gap-6">
             {strategicDivisions.map((d) => <DivisionCard key={d.name} {...d} status="strategic" />)}
           </div>
         </div>

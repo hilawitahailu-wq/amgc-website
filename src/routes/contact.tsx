@@ -53,20 +53,21 @@ function ContactPage() {
           <aside className="lg:col-span-4 space-y-10">
             <InfoBlock
               icon={<MapPin className="w-5 h-5" />}
-              label="Corporate Head Office"
-              lines={["Bole Sub-city, Africa Avenue", "Addis Ababa, Ethiopia"]}
+              label="AIMEX Office"
+              lines={["Rediat Building, 7th Floor, Office 7-7", "Kazanchis, Addis Ababa, Ethiopia"]}
+              href="https://maps.google.com/?q=Rediat+Building+Kazanchis+Addis+Ababa+Ethiopia"
             />
             <InfoBlock
               icon={<Phone className="w-5 h-5" />}
               label="Phone"
-              lines={["+251 11 000 0000"]}
-              href="tel:+251110000000"
+              lines={["+251 915 000 070"]}
+              href="tel:+251915000070"
             />
             <InfoBlock
               icon={<Mail className="w-5 h-5" />}
               label="Email"
-              lines={["info@amgc.co"]}
-              href="mailto:info@amgc.co"
+              lines={["abdoulwahabimportexport@gmail.com"]}
+              href="mailto:abdoulwahabimportexport@gmail.com"
             />
             <div className="pt-8 border-t border-white/10">
               <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">Office Hours</div>
@@ -74,6 +75,15 @@ function ContactPage() {
                 Monday – Friday<br />
                 8:30 AM – 6:00 PM (EAT)
               </p>
+            </div>
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <iframe
+                title="AMGC contact map"
+                src="https://www.google.com/maps?q=Rediat%20Building%20Kazanchis%20Addis%20Ababa%20Ethiopia&output=embed"
+                className="h-64 w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </aside>
 

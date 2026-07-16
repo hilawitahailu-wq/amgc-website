@@ -14,7 +14,7 @@ type Settings = {
 const defaults: Settings = {
   companyName: "AMGC — Abdoulwahab Mahamoud Group Companies",
   companyLogo: "",
-  email: "info@amgc.com",
+  email: "abdoulwahabimportexport@gmail.com",
   phone: "+253 21 000 000",
   address: "Djibouti City, Republic of Djibouti",
   facebook: "", twitter: "", linkedin: "", instagram: "", youtube: "",

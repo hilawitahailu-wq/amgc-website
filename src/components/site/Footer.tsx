@@ -18,6 +18,7 @@ export function Footer() {
           <p className="max-w-md text-sm leading-relaxed">
             Abdoulwahab Mahamoud Group of Companies — a diversified African business group connecting local capability with global markets.
           </p>
+          <p className="mt-3 text-sm text-gold">Resources are limited, creativity is not.</p>
         </div>
 
         <div>
@@ -26,7 +27,7 @@ export function Footer() {
             <li><Link to="/about" className="hover:text-gold">About AMGC</Link></li>
             <li><Link to="/businesses" className="hover:text-gold">Businesses</Link></li>
             <li><Link to="/partners" className="hover:text-gold">Partners</Link></li>
-            <li><Link to="/network" className="hover:text-gold">Global Network</Link></li>
+            <li><Link to="/presence" className="hover:text-gold">Presence</Link></li>
             <li><Link to="/contact" className="hover:text-gold">Contact</Link></li>
           </ul>
         </div>
@@ -34,9 +35,10 @@ export function Footer() {
         <div>
           <h4 className="text-white text-sm uppercase tracking-widest mb-5">Corporate Office</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex gap-3"><MapPin className="w-4 h-4 mt-0.5 text-gold shrink-0" /> Addis Ababa, Ethiopia</li>
-            <li className="flex gap-3"><Phone className="w-4 h-4 mt-0.5 text-gold shrink-0" /> +251 11 000 0000</li>
-            <li className="flex gap-3"><Mail className="w-4 h-4 mt-0.5 text-gold shrink-0" /> info@amgc.co</li>
+            <li className="flex gap-3"><MapPin className="w-4 h-4 mt-0.5 text-gold shrink-0" /> AIMEX — Rediat Building, 7th Floor, Office 7-7, Kazanchis, Addis Ababa, Ethiopia</li>
+            <li className="mt-1 text-sm"><a href="https://maps.google.com/?q=Rediat+Building+Kazanchis+Addis+Ababa+Ethiopia" target="_blank" rel="noreferrer" className="text-gold underline-offset-4 hover:underline">Open in Google Maps</a></li>
+            <li className="flex gap-3"><Phone className="w-4 h-4 mt-0.5 text-gold shrink-0" /> +251 915 000 070</li>
+            <li className="flex gap-3"><Mail className="w-4 h-4 mt-0.5 text-gold shrink-0" /> abdoulwahabimportexport@gmail.com</li>
           </ul>
         </div>
       </div>

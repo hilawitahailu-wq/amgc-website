@@ -15,11 +15,11 @@ export const Route = createFileRoute("/news")({
 });
 
 const articles = [
-  { date: "Jun 24, 2026", category: "Announcement", title: "AMGC signs strategic partnership with Kadoğlu Group in Türkiye", excerpt: "The multi-year agreement expands AMGC's premium edible oil distribution across East Africa and the Horn." },
+  { date: "Jun 24, 2026", category: "Announcement", title: "AMGC signs strategic partnership with Kadooğlu Group in Türkiye", excerpt: "The multi-year agreement expands AMGC's premium edible oil distribution across East Africa and the Horn." },
   { date: "May 12, 2026", category: "Market Insight", title: "Djibouti–Addis corridor: five trends reshaping East African logistics", excerpt: "Our logistics team unpacks how new port capacity and rail integration will define freight economics in 2026." },
   { date: "Apr 03, 2026", category: "Press Release", title: "AMGC breaks ground on Dire Dawa polymer manufacturing plant", excerpt: "The facility marks a milestone in AMGC's downstream industrialization strategy with Tajchem." },
   { date: "Feb 18, 2026", category: "Leadership", title: "Chairman's letter: building an institution for the next generation", excerpt: "Abdoulwahab Mahamoud on discipline, patience, and the long horizon of African enterprise." },
-  { date: "Jan 09, 2026", category: "Announcement", title: "AMGC opens representative office in Dubai", excerpt: "The new office anchors AMGC's Gulf presence ahead of the planned global headquarters." },
+  { date: "Jan 09, 2026", category: "Announcement", title: "AMGC opens representative office in Dubai", excerpt: "The new office anchors AMGC's Gulf presence ahead of its international trading office in the UAE." },
   { date: "Dec 02, 2025", category: "Market Insight", title: "Why Ethiopia's agro-processing sector is entering a new decade", excerpt: "Regulatory reform, FX access, and industrial parks are converging into a genuine investment thesis." },
 ];
 

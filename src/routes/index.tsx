@@ -15,13 +15,13 @@ import { Stat } from "@/components/site/Stat";
 import { DivisionCard } from "@/components/site/DivisionCard";
 
 // Data Imports
-import { activeDivisions, strategicDivisions, partners, markets, offices } from "@/lib/site-data";
+import { activeDivisions, developingDivisions, strategicDivisions, partners, markets, offices } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "AMGC — Building Africa's Future Through Trade, Industry & Innovation" },
-      { name: "description", content: "AMGC is a diversified African business group with active operations in import-export and commodity trading, and strategic vision across logistics, manufacturing, agriculture, mining, and construction." },
+      { name: "description", content: "AMGC is a diversified African business group with active operations in commercial trading and trade facilitation, alongside strategic growth across logistics, manufacturing, agriculture, mining, and construction." },
     ],
   }),
   component: Home,
@@ -84,8 +84,15 @@ function Home() {
             ))}
           </div>
 
-          <div className="mb-6 text-xs uppercase tracking-[0.3em] text-gold">Strategic Business Divisions</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mb-6 text-xs uppercase tracking-[0.3em] text-gold">In Development</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {developingDivisions.map((d) => (
+              <DivisionCard key={d.name} {...d} status="development" />
+            ))}
+          </div>
+
+          <div className="mb-6 text-xs uppercase tracking-[0.3em] text-gold">Strategic Divisions</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {strategicDivisions.map((d) => (
               <DivisionCard key={d.name} {...d} status="strategic" />
             ))}
@@ -97,9 +104,9 @@ function Home() {
       <section className="py-24 bg-navy-deep relative overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, var(--gold) 0%, transparent 50%)" }} />
         <div className="container-x relative grid grid-cols-2 md:grid-cols-4 gap-12">
-          <Stat value="15+" label="Years of Trust" />
-          <Stat value="6" label="Countries Served" />
-          <Stat value="50+" label="Global Partners" />
+          <Stat value="2023" label="Established" />
+          <Stat value="7" label="Business Divisions" />
+          <Stat value="6" label="Country Trade Network" />
           <Stat value="1000+" label="Successful Shipments" />
         </div>
       </section>
@@ -129,7 +136,6 @@ function Home() {
         <div className="container-x">
           <SectionHeader eyebrow="— Strategic Partners" title="The companies we build with." center />
           
-          {/* Confident Focal Size: Cleaned up background rules to ensure pixel-perfect 340px alignment */}
           <div className="mt-10 mb-12 flex justify-center w-full">
             <div className="relative aspect-[4/3] w-full max-w-[340px] p-[5px] overflow-hidden border border-slate-200 bg-white rounded-sm shadow-[0_0_30px_rgba(212,175,55,0.15)] group/img">
               <img 

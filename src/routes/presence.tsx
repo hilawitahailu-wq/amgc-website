@@ -25,36 +25,36 @@ type Office = {
 
 const currentOffices: Office[] = [
   {
-    city: "Addis Ababa",
+    city: "Jigjiga",
     country: "Ethiopia",
-    label: "Corporate Head Office",
-    address: "Bole Sub-city, Africa Avenue, Addis Ababa, Ethiopia",
-    phone: "+251 11 000 0000",
-    email: "info@amgc.co",
+    label: "Group Headquarters & Founding Office",
+    address: "Jigjiga, Somali Region, Ethiopia",
+    phone: "+251 915 000 070",
+    email: "abdoulwahabimportexport@gmail.com",
   },
   {
     city: "Addis Ababa",
     country: "Ethiopia",
-    label: "AIMEX Import & Export Office",
-    address: "Kirkos Sub-city, Addis Ababa, Ethiopia",
-    phone: "+251 11 000 0001",
-    email: "aimex@amgc.co",
+    label: "Corporate Office",
+    address: "Rediat Building, 7th Floor, Office 7-7, Kazanchis, Addis Ababa, Ethiopia",
+    phone: "+251 915 000 070",
+    email: "abdoulwahabimportexport@gmail.com",
   },
   {
     city: "Dire Dawa",
     country: "Ethiopia",
-    label: "Regional Trade Office",
-    address: "Kezira, Dire Dawa, Ethiopia",
-    phone: "+251 25 000 0000",
-    email: "diredawa@amgc.co",
+    label: "Regional Office",
+    address: "Dire Dawa, Ethiopia",
+    phone: "+251 915 000 070",
+    email: "abdoulwahabimportexport@gmail.com",
   },
   {
-    city: "Djibouti City",
+    city: "Djibouti",
     country: "Djibouti",
-    label: "Port & Logistics Operations",
-    address: "Port de Djibouti Zone, Djibouti City, Djibouti",
-    phone: "+253 21 000 000",
-    email: "djibouti@amgc.co",
+    label: "Port Operations, AMGC Trading",
+    address: "Djibouti, Djibouti",
+    phone: "+251 915 000 070",
+    email: "abdoulwahabimportexport@gmail.com",
   },
 ];
 
@@ -62,18 +62,10 @@ const futureOffices: Office[] = [
   {
     city: "Dubai",
     country: "United Arab Emirates",
-    label: "Future Global Headquarters",
-    address: "Business Bay, Dubai, UAE",
-    phone: "Opening 2026",
-    email: "dubai@amgc.co",
-  },
-  {
-    city: "Jigjiga",
-    country: "Ethiopia",
-    label: "Regional Hub",
-    address: "Jigjiga, Somali Region, Ethiopia",
-    phone: "Coming Soon",
-    email: "jigjiga@amgc.co",
+    label: "International Trading Office (AMGC HQ)",
+    address: "Dubai, UAE",
+    phone: "Planned",
+    email: "abdoulwahabimportexport@gmail.com",
   },
 ];
 
@@ -84,19 +76,18 @@ export default function PresencePage() {
         <div className="container-x max-w-4xl">
           <div className="text-xs uppercase tracking-[0.4em] text-gold mb-8">— Our Presence</div>
           <h1 className="font-display font-light text-5xl md:text-7xl text-balance">
-            A growing footprint across East Africa & the Gulf.
+            A growing footprint across East Africa and the Gulf.
           </h1>
           <p className="mt-8 text-white/70 text-lg max-w-2xl leading-relaxed">
-            From our headquarters in Addis Ababa to strategic hubs on the Red Sea and our upcoming global hub 
-            in the UAE — meet the AMGC network.
+            Current locations span Jigjiga, Addis Ababa, Dire Dawa, and Djibouti, with Dubai planned as AMGC’s international trading office.
           </p>
         </div>
       </section>
 
       <section className="py-24 bg-background">
         <div className="container-x">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">— Current Offices</div>
-          <h2 className="font-display text-4xl md:text-5xl text-navy-deep mb-16 font-light">Where you can find us today</h2>
+          <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">— Current Locations</div>
+          <h2 className="font-display text-4xl md:text-5xl text-navy-deep mb-16 font-light">Where we operate today</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {currentOffices.map((o, i) => (
               <OfficeCard key={i} office={o} />
@@ -107,8 +98,8 @@ export default function PresencePage() {
 
       <section className="py-24 bg-navy-deep text-white">
         <div className="container-x">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">— Future Offices</div>
-          <h2 className="font-display text-4xl md:text-5xl text-white mb-16 font-light">Coming soon</h2>
+          <div className="text-xs uppercase tracking-[0.3em] text-gold mb-3">— Planned</div>
+          <h2 className="font-display text-4xl md:text-5xl text-white mb-16 font-light">Expanding into the Gulf</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {futureOffices.map((o, i) => (
               <div key={i} className="relative border border-white/10 p-8 hover:border-gold transition-all">
